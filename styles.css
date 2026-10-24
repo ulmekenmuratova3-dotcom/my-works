@@ -1,0 +1,210 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Верхняя панель */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #334155;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.stat-value.score { color: #38bdf8; }
+.stat-value.level { color: #facc15; }
+.stat-value.lives { color: #f43f5e; }
+
+/* Игровое поле */
+.game-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: #020617;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 2px solid #334155;
+  cursor: crosshair;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Оверлей меню и GameOver */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 6, 23, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 8px;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 80%;
+}
+
+.diff-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-diff {
+  padding: 12px 20px;
+  border: 2px solid #334155;
+  background: #1e293b;
+  color: #94a3b8;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-diff:hover {
+  border-color: #38bdf8;
+  color: #fff;
+}
+
+.btn-diff.active {
+  background: #38bdf8;
+  color: #020617;
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn-start {
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+/* Статистика конца игры */
+.stats-card {
+  background: #1e293b;
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #334155;
+}
+
+.stats-card p {
+  font-size: 16px;
+  color: #cbd5e1;
+  margin: 6px 0;
+}
+
+.stats-card span {
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+/* Звуковой переключатель */
+.sound-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  z-index: 20;
+}
+
+.sound-btn:hover {
+  color: #fff;
+}

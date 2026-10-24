@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Target Shooter - Минималистичная Стрелялка</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <button id="soundToggle" class="sound-btn">🔊 Звук: Вкл</button>
+
+    <!-- Информационная панель -->
+    <div class="top-bar">
+      <div class="stat-box">
+        <span class="stat-label">Очки</span>
+        <span id="scoreDisplay" class="stat-value score">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Уровень</span>
+        <span id="levelDisplay" class="stat-value level">1</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Множитель</span>
+        <span id="multiplierDisplay" class="stat-value">1.0x</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Жизни</span>
+        <span id="livesDisplay" class="stat-value lives">❤️❤️❤️</span>
+      </div>
+    </div>
+
+    <!-- Область игры -->
+    <div class="game-wrapper">
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- Главное меню -->
+      <div id="startMenu" class="overlay">
+        <h1>TARGET SHOOTER</h1>
+        <p class="subtitle">Попадайте по мишеням, набирайте очки и повышайте уровень! Остерегайтесь бомб 💣</p>
+        
+        <div class="diff-selector">
+          <button class="btn-diff active" data-diff="easy">Лёгкий</button>
+          <button class="btn-diff" data-diff="medium">Средний</button>
+          <button class="btn-diff" data-diff="hard">Сложный</button>
+        </div>
+
+        <button id="startBtn" class="btn-start">Начать Игру</button>
+      </div>
+
+      <!-- Экран проигрыша -->
+      <div id="gameOverMenu" class="overlay hidden">
+        <h1 style="color: #f43f5e;">ИГРА ОКОНЧЕНА</h1>
+        
+        <div class="stats-card">
+          <p>Итоговый счёт: <span id="finalScore">0</span></p>
+          <p>Точность: <span id="finalAccuracy">0%</span></p>
+          <p>Макс. комбо: <span id="finalCombo">0</span></p>
+          <p>Рекорд режима: <span id="highScore">0</span></p>
+        </div>
+
+        <button id="restartBtn" class="btn-start">Играть Снова</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>ч
